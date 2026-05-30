@@ -8,12 +8,9 @@
   <img src="https://img.shields.io/badge/license-GPL-3DA639" alt="GPL">
 </p>
 
-<!-- To record the demo GIF, run `vhs assets/xtop.tape` on a Linux box
-     with yeet installed, then add:
-     <p align="center">
-       <img src="assets/xtop.gif" alt="xtop running in anonymize mode" width="820">
-     </p>
-     here. -->
+<p align="center">
+  <img src="assets/xtop.gif" alt="xtop demo" width="820">
+</p>
 
 **xtop turns every process birth and death on your box into a live terminal dashboard** — a process lineage tree that grows and prunes itself in real time, a scrolling exec/exit feed, a leaderboard of the busiest spawners, a heuristic alert panel for suspicious exec patterns, and an exec-rate heatmap split by host / container / kernel — drawn with block and braille graphics over eBPF.
 
@@ -24,13 +21,13 @@
 
 ```sh
 curl -fsSL https://yeet.cx | sh
-yeet run https://github.com/YOUR-USERNAME/xtop
+yeet run https://github.com/ibrahimmian36/xtop
 ```
 
 For a shareable screenshot, anonymize command names, paths, and container names (everything identifying gets relabeled `proc-01`, `container-02`, …):
 
 ```sh
-yeet run https://github.com/YOUR-USERNAME/xtop -- --anonymize
+yeet run https://github.com/ibrahimmian36/xtop -- --anonymize
 ```
 
 Runs until `Ctrl-C`. Resize the terminal and the layout reflows; minimum 80×28.
