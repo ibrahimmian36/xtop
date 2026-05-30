@@ -245,7 +245,11 @@ function panelRate(C, withFork) {
 }
 
 /* ---- composition --------------------------------------------------- */
+const MIN_COLS = 80;
+const MIN_ROWS = 28;
+
 export function renderDashboard(C, R) {
+  if (C < MIN_COLS || R < MIN_ROWS) return smallTerm(C, R);
   const now = Date.now();
   const rows = [];
   const lw = Math.floor((C - 2) / 2), rw = C - 2 - lw;
@@ -301,4 +305,14 @@ export function renderDashboard(C, R) {
   }
   rows.push(botRule(C));
   return rows;
+}
+
+function smallTerm(C, R) {
+  /* renderDashboard returns an array of lines; mirror that shape. Keep
+   * each line within the available width. */
+  return [
+    `xtop: terminal too small`.slice(0, Math.max(1, C)),
+    `need ≥ ${MIN_COLS}×${MIN_ROWS}`.slice(0, Math.max(1, C)),
+    `have ${C}×${R}`.slice(0, Math.max(1, C)),
+  ];
 }

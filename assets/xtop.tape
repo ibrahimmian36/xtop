@@ -18,7 +18,7 @@ Set Framerate  24
 # Launch xtop and let it warm up off-camera, so the GIF opens directly on
 # the live dashboard instead of a blank prompt.
 Hide
-Type "yeet run https://github.com/yeet-src/xtop -- --anonymize"
+Type "yeet run https://github.com/YOUR-USERNAME/xtop -- --anonymize"
 Enter
 Sleep 6s
 Show
